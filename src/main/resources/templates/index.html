@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrom</title>
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body>
+<div class="p-4">
+    <h1>Palindrom oder nicht?</h1>
+    <img src="/images/palindrom.png" alt="Palindrom Bild">
+    <img src="/images/palindromshirt.jpg" alt="Palindrom Shirt">
+    <form action="#" th:action="@{/palindrom}" th:object="${palindrom}" method="post">
+        <div class="form-group">
+            <label>Text:</label>
+            <input type="text" class="form-control" placeholder="Palindrom eingeben" th:field="*{input}">
+        </div>
+        <button type="submit" class="btn btn-success">Check</button>
+    </form>
+    <div class="form-group">
+        <label>Ausgabe:</label>
+        <input type="text" class="form-control" placeholder="Ausgabe" th:value="${palindrom.response}">
+    </div>
+</div>
+<footer>
+    <small>© 2019 / Author: Fabio Torti</small>
+</footer>
+</body>
+</html>
